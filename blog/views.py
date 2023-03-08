@@ -11,6 +11,7 @@ class PostList(ListView):
     model = Post
     template_name = 'blog/index.html'
     context_object_name = 'posts'
+    ordering = ['-created_at']
 
 
 class PostDetail(DetailView):
