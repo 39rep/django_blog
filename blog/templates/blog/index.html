@@ -2,9 +2,10 @@
 {% block content %}
 <!-- <h1>ブログ一覧</h1>
 <hr> -->
-{% for post in posts %}
+<div class="row">
+    {% for post in posts %}
     {% if post.is_published or user.is_authenticated %}
-    <div class="card w-75 mt-3 mx-auto">
+    <div class="card w-30 mt-3 mx-auto col-4">
         {% if post.image %}
         <img class="card-img-top" src="{{post.image.url}}" alt="{{post.title}}">
         {% endif %}
@@ -25,5 +26,6 @@
     <p>{{post.created_at}}</p>
     <p>{{post.content}}</p>
     <a href="{% url 'post_detail' post.pk %}">続きを読む</a> -->
-{% endfor %}
+    {% endfor %}
+</div>
 {% endblock content %}
